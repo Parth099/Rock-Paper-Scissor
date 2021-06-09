@@ -8,16 +8,43 @@
 
     <body>
         <h1 class="title">Rock Paper Scissors</h1>
-        <div id="score-cont">
-            <h1 class="text-imp">Score</h1>
-            <div id="score-box">
-                <img class="score-img" src="img/human.png">
-                <h1 id="pScore">0</h1> - <h1 id="cScore">0</h1>
-                <img class="score-img" src="img/robot.png">
+        <div id="info">
+            <div id="score-cont">
+                <h1 class="text-imp">Score</h1>
+                <div id="score-box">
+                    <img class="score-img" src="img/human.png">
+                    <h1 id="pScore">0</h1> - <h1 id="cScore">0</h1>
+                    <img class="score-img" src="img/robot.png">
+                </div>
+            </div>
+
+            <div id="score-info">
+                <h1 class="text-imp info-title">Game Info:</h1>
+                <div id="game-info-main">
+                    <p>Round Winner: <span id="winner">NaN</span></p>
+                    <p>You Last Played: <span id="LPlayer">NaN</span></p>
+                    <p>Computer Last Played: <span id="LComp">NaN</span></p>
+                </div>
             </div>
         </div>
         <div id="game-main">
             <h1 class="choice-head">Choose your move..</h1>
+            <div id="choices">
+                <section class="choice-card" onclick="playerSelectionWrapper(1)">
+                    <img class="choice-img" src="img/hand.png">
+                    <h3 class="choice-info">Paper</h3>
+                </section>
+
+                <section class="choice-card" onclick="playerSelectionWrapper(2)">
+                    <img class="choice-img" src="img/rock.png">
+                    <h3 class="choice-info">Rock</h3>
+                </section>
+
+                <section class="choice-card" onclick="playerSelectionWrapper(3)">
+                    <img class="choice-img" src="img/sizz.png">
+                    <h3 class="choice-info">Scissors</h3>
+                </section>
+            </div>
         </div>
     </body>
 </html>
