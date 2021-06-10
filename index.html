@@ -3,6 +3,8 @@
     <head>
         <title>RPS</title>
         <link rel="stylesheet" href="css/styles.css" >
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap" rel="stylesheet"> 
         <script src="js/src.js"></script>
     </head>
 
@@ -19,7 +21,7 @@
             </div>
 
             <div id="score-info">
-                <h1 class="text-imp info-title">Game Info:</h1>
+                <h1 class="text-imp">Game Info:</h1>
                 <div id="game-info-main">
                     <p>Round Winner: <span id="winner">NaN</span></p>
                     <p>You Last Played: <span id="LPlayer">NaN</span></p>
@@ -47,4 +49,7 @@
             </div>
         </div>
     </body>
+    <div class="button-cont">
+        <button type="button" class="button" onclick="reset()">Reset</button>
+    </div>
 </html>

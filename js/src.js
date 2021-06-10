@@ -1,5 +1,5 @@
-let score_human = 0;
-let score_comp  = 0;
+var score_human = 0;
+var score_comp  = 0;
 
 let moves_arr = [
     "Paper", "Rock", "Scissors"
@@ -74,4 +74,21 @@ function chkScore(){
     else if(score_comp > 4){
         alert("You have Lost! :(")
     }
+
+}
+
+//reseter
+function reset(){
+    score_human = 0;
+    score_comp  = 0;
+    push_def_values("0", "0", "NaN")
+}
+
+function push_def_values(sc_a, sc_b, game_plays){
+    document.getElementById("pScore").innerText = sc_a;
+    document.getElementById("cScore").innerText = sc_b;
+
+    document.getElementById("LPlayer").innerText = game_plays;
+    document.getElementById("LComp").innerText = game_plays;
+    document.getElementById("winner").innerText = game_plays;
 }

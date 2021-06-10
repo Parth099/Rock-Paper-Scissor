@@ -1,36 +1,54 @@
 :root{
     --imgsz : 200px;
     --imgsz-sm: 50px;
+    --imgsz-vsm: 24px;
     --hover: green;
-    --ch-theme: rgb(255, 206, 143)
+
+    --ch-theme: rgb(255, 206, 143);
+    --ch-theme-alt: rgb(253, 99, 99);
+
+    --fontv : 1.7rem;
 }
 
 *{
     box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 body{
     background-color: black;
     color: white;
     margin: 0;
     padding: 0;
+    width: 715px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
 }
+
+
 .title{
     font-size: 4rem;
     text-align: center;
     text-decoration: underline;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
 }
 #score-cont{
-    font-size: 1.7rem;
+    font-size: var(--fontv);
     margin: 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    grid-area: sc;
+
 }
 .text-imp{
     text-align: center;
     flex-basis: 100%;
     display: inline;
+    margin: 5px 0px 25px 0px;
 }
 #score-box{
     border: 1px white solid;
@@ -55,9 +73,10 @@ body{
     font-size: 3rem;
 }
 #choices{
-    display: flex;
+    display: inline-flex;
+    width: 100%;
     justify-content: center;
-    gap: 25px
+    gap: 25px;
 }
 .choice-img{
     width: var(--imgsz);
@@ -80,27 +99,32 @@ body{
     display: flex;
     justify-content: center;
 
+
 }
 #score-info{
     display: inline-flex;
+    font-size: var(--fontv);
     flex-wrap: wrap;
     justify-content: center;
+    grid-area: si;
+    margin-top: 0px;
 }
 .info-title{
-    flex-basis: 100%;
-    margin-top: 50px;
+    margin: 5px 0px 25px 0px;
 }
 #game-info-main{
     border: 1px white solid;
     border-radius: 3px;
     line-height: 5px;
     position: relative;
-    bottom : 15px;
+    bottom : 28px;
     padding: 10px;
     padding-bottom: 0px;
 
     width: 280px;
     height: 100px;
+
+    font-size: 1rem;
 }
 
 .choice-card:hover{
@@ -109,15 +133,78 @@ body{
     animation: move_up .5s;
     animation-iteration-count: 1;
 }
+.button-cont{
+    text-align: center;
+}
+.button {
+    background-color: #000;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border: 1.5px white solid;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+.button:hover{
+    background-color: white;
+    color: black;
+}
 @keyframes move_up {
     0%{
         bottom: 2px;
     }
     50%{
         bottom: 8px;
-        --ch-theme: red;
+        border: 2px var(--ch-theme-alt) solid;
+        color: var(--ch-theme-alt);
     }
     100%{
         bottom: 0px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    body{
+        width: 100%;
+    }
+    :root{
+        --fontv : 1rem;
+        --imgsz : 100px
+    }
+    .title{
+        font-size: 3rem;
+    }
+    .choice-card{
+        width: 160px;
+    }
+    .choice-head{
+        font-size: 2.5em;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    :root{
+        --imgsz : 70px
+    }
+    #info{
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-areas: 
+        "sc"
+        "si";
+    }
+    .choice-head{
+        margin-top: 0px;
+
+    }
+    .choice-card{
+        width: 130px;
+    }
+    .title{
+        font-size: 2rem;
     }
 }
