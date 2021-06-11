@@ -8,6 +8,8 @@
     --ch-theme-alt: rgb(253, 99, 99);
 
     --fontv : 1rem;
+
+    --bk-clr: #000;
 }
 
 *{
@@ -15,7 +17,10 @@
     font-family: 'Noto Sans JP', sans-serif;
 }
 body{
-    background-color: black;
+    background-color: var(--bk-clr);
+}
+.main-content{
+    background-color: var(--bk-clr);
     color: white;
     margin: 0;
     padding: 0;
@@ -70,7 +75,21 @@ body{
 }
 .choice-head{
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.95rem;
+    animation-name: phase-sizable;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes phase-sizable{
+    0%{
+        color: var(--ch-theme)
+    }
+    50%{
+        color: var(--ch-theme-alt);
+    }
+    100%{
+        color: var(--ch-theme);
+    }
 }
 #choices{
     display: inline-flex;
@@ -168,7 +187,7 @@ body{
 }
 
 @media only screen and (max-width: 750px) {
-    body{
+    .main-content{
         width: 100%;
     }
     :root{
@@ -211,4 +230,24 @@ body{
 
 #game-info-main > p{
     padding: 10px;
+}
+.credits{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    color: white;
+    background-color: rgb(87, 87, 87);
+    padding: 10px;
+    text-align: center;
+}
+
+.credits-links > a:link, .credits-links > a:visited{
+    color: white;
+    font-style: italic;
+}
+
+.credits-links > a:hover{
+    color: var(--ch-theme);
+    font-weight: bolder;
 }
