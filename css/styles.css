@@ -3,6 +3,7 @@
     --imgsz-sm: 50px;
     --imgsz-vsm: 24px;
     --hover: green;
+    --reset-img-sz: 50px;
 
     --ch-theme: rgb(255, 206, 143);
     --ch-theme-alt: rgb(253, 99, 99);
@@ -152,6 +153,37 @@ body{
     animation: move_up .5s;
     animation-iteration-count: 1;
 }
+@keyframes move_up {
+    0%{
+        bottom: 2px;
+    }
+    50%{
+        bottom: 8px;
+        border: 2px var(--ch-theme-alt) solid;
+        color: var(--ch-theme-alt);
+    }
+    100%{
+        bottom: 0px;
+    }
+}
+.reset-img{
+    display: inline;
+    width: var(--reset-img-sz);
+    height: var(--reset-img-sz);
+    border: 1px white solid;
+    padding: 5px;
+    border-radius: 10px;
+    position: relative;
+    top: 10px
+}
+.reset-img:hover{
+    border: 2px var(--ch-theme) solid;
+    color: var(--ch-theme);
+    animation: move_up .5s;
+    animation-iteration-count: infinite;
+}
+
+/* defunct!
 .button-cont{
     text-align: center;
 }
@@ -167,24 +199,14 @@ body{
     display: inline;
     font-size: 18px;
     margin-top: 20px;
+
+    margin-bottom: 60px;
   }
 .button:hover{
     background-color: white;
     color: black;
 }
-@keyframes move_up {
-    0%{
-        bottom: 2px;
-    }
-    50%{
-        bottom: 8px;
-        border: 2px var(--ch-theme-alt) solid;
-        color: var(--ch-theme-alt);
-    }
-    100%{
-        bottom: 0px;
-    }
-}
+*/
 
 @media only screen and (max-width: 750px) {
     .main-content{
