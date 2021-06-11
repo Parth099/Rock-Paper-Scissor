@@ -48,7 +48,7 @@ body{
     text-align: center;
     flex-basis: 100%;
     display: inline;
-    margin: 5px 0px 25px 0px;
+    margin-bottom: 50px;
 }
 #score-box{
     border: 1px white solid;
@@ -207,4 +207,8 @@ body{
     .title{
         font-size: 2rem;
     }
+}
+
+#game-info-main > p{
+    padding: 10px;
 }
